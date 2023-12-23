@@ -11,12 +11,14 @@
     "check:apply": "biome check --apply src"
   },
   "dependencies": {
+    "@extend-chrome/storage": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
     "@crxjs/vite-plugin": "^2.0.0-beta.21",
+    "@types/chrome": "^0.0.254",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
