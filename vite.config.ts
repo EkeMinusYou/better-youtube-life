@@ -8,7 +8,7 @@ const manifest = defineManifest({
 	version: "1.0.0",
 	content_scripts: [
 		{
-			matches: ["https://www.google.com/*"],
+			matches: ["https://www.youtube.com/*"],
 			js: ["src/contentScript/script.ts"],
 		},
 	],
