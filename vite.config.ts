@@ -4,7 +4,7 @@ import { crx, defineManifest } from "@crxjs/vite-plugin";
 
 const manifest = defineManifest({
 	manifest_version: 3,
-	name: "Shortcut for Youtube",
+	name: "Shortcuts for Youtube",
 	version: "1.0.0",
 	content_scripts: [
 		{
