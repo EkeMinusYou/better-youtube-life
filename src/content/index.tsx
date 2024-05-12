@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", (_event) => {
-	const targetElement = document.getElementById("search-input");
-	targetElement?.click();
-});
+const body = document.querySelector("body");
+const addElement = document.createElement("h1");
+addElement.textContent = "Hello!!";
+body!.prepend(addElement);
