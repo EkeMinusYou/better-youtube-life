@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "check": "biome check",
-    "check:apply": "biome check --apply src"
+    "check:apply": "biome check --apply src",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@extend-chrome/storage": "^1.5.0",
@@ -22,6 +23,7 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
+    "prettier": "^3.2.5",
     "typescript": "^5.2.2",
     "vite": "^4.5.1"
   }
