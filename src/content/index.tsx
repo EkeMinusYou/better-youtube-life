@@ -1,10 +1,10 @@
-import "./index.css";
+import { highlighted } from "./styles.css";
 
 document.addEventListener("keydown", function (event) {
   if (event.key === "Shift") {
     let videos = document.querySelectorAll("ytd-thumbnail");
     videos.forEach(function (video) {
-      video.classList.toggle("highlighted");
+      video.classList.toggle(highlighted);
     });
   }
 });
