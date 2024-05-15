@@ -12,19 +12,19 @@
   },
   "dependencies": {
     "@extend-chrome/storage": "^1.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
+    "@biomejs/biome": "1.7.3",
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
-    "@types/chrome": "^0.0.254",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
+    "@types/chrome": "^0.0.268",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
     "concurrently": "^8.2.2",
     "prettier": "^3.2.5",
-    "typescript": "^5.2.2",
+    "typescript": "^5.4.5",
     "vite": "^5.2.11"
   }
 }
