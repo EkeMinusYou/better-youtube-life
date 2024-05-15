@@ -10,7 +10,6 @@ const manifest = defineManifest({
     {
       matches: ["https://www.youtube.com/*"],
       js: ["src/content/index.tsx"],
-      css: ["src/content/index.css"],
     },
   ],
 });
