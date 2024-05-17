@@ -1,7 +1,8 @@
 import { keymaps } from "./keymaps";
 import { styles } from "./styles";
 
-let current = 0;
+// undefinedは未選択。いずれかのkeyが押されたら0になる
+let current: number | undefined = undefined;
 
 document.addEventListener("keydown", function (event) {
   // 0はどの動画も示さない。
@@ -22,21 +23,26 @@ document.addEventListener("keydown", function (event) {
 });
 
 const handleKeyLeft = () => {
-  const videos = document.querySelectorAll("ytd-thumbnail");
+  const videos = document.querySelectorAll("ytd-rich-item-renderer");
+  if (current === undefined) {
+    current = 0;
+    videos[current].classList.add(styles.highlight);
+    return;
+  }
 
   if (current === 0) {
-    current = 1;
-  } else {
-    videos[current].classList.remove(styles.highlight);
-    current--;
+    return;
   }
+
+  videos[current].classList.remove(styles.highlight);
+  current--;
   videos[current].classList.add(styles.highlight);
 };
 
 // const handleKeyDown = () => {
 //   let current = 0;
 //
-//   const videos = document.querySelectorAll("ytd-thumbnail");
+//   const videos = document.querySelectorAll("ytd-rich-item-renderer");
 //   if (current === 0) {
 //     current = 1;
 //   } else {
@@ -49,7 +55,7 @@ const handleKeyLeft = () => {
 // const handlekeyUp = () => {
 //   let current = 0;
 //
-//   const videos = document.querySelectorAll("ytd-thumbnail");
+//   const videos = document.querySelectorAll("ytd-rich-item-renderer");
 //   if (current === 0) {
 //     current = 1;
 //   } else {
@@ -60,13 +66,14 @@ const handleKeyLeft = () => {
 // };
 
 const handleKeyRight = () => {
-  const videos = document.querySelectorAll("ytd-thumbnail");
-
-  if (current === 0) {
-    current = 1;
-  } else {
-    videos[current].classList.remove(styles.highlight);
-    current++;
+  const videos = document.querySelectorAll("ytd-rich-item-renderer");
+  if (current === undefined) {
+    current = 0;
+    videos[current].classList.add(styles.highlight);
+    return;
   }
+
+  videos[current].classList.remove(styles.highlight);
+  current++;
   videos[current].classList.add(styles.highlight);
 };
