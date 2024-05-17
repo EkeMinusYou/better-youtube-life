@@ -3,4 +3,4 @@ export const keymaps = {
   Down: "j",
   Up: "k",
   Right: "l",
-};
+} as const;
