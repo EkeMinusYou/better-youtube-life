@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { keymaps } from "./keymaps";
 
 const style = css({
   border: "4px solid red",
@@ -9,7 +10,7 @@ document.addEventListener("keydown", function (event) {
   // 0は初期値として扱う。0はどの動画も示さない。
   let current: number = 0;
 
-  if (event.key === "h") {
+  if (event.key === keymaps.Left) {
     const videos = document.querySelectorAll("ytd-thumbnail");
 
     if (current === 0) {
@@ -21,7 +22,7 @@ document.addEventListener("keydown", function (event) {
     videos[current].classList.add(style);
   }
 
-  if (event.key === "j") {
+  if (event.key === keymaps.Down) {
     const videos = document.querySelectorAll("ytd-thumbnail");
     if (current === 0) {
       current = 1;
@@ -32,7 +33,7 @@ document.addEventListener("keydown", function (event) {
     videos[current].classList.add(style);
   }
 
-  if (event.key === "k") {
+  if (event.key === keymaps.Up) {
     const videos = document.querySelectorAll("ytd-thumbnail");
     if (current === 0) {
       current = 1;
@@ -43,7 +44,7 @@ document.addEventListener("keydown", function (event) {
     videos[current].classList.add(style);
   }
 
-  if (event.key === "l") {
+  if (event.key === keymaps.Right) {
     const videos = document.querySelectorAll("ytd-thumbnail");
     if (current === 0) {
       current = 1;
