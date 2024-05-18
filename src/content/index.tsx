@@ -1,59 +1,29 @@
 import { GridVideos } from "./grid-videos";
-import { keymaps } from "./keymaps";
+import { moving, movingKeys } from "./keymaps";
 
 const main = () => {
   const videos = new GridVideos();
 
   document.addEventListener("keydown", function (event) {
+    if (movingKeys.includes(event.key) && !videos.highlighted()) {
+      videos.highlightFirst();
+      return;
+    }
     switch (event.key) {
-      case keymaps.Left:
-        handleKeyLeft(videos);
+      case moving.Left:
+        videos.highlightPrevious();
         break;
-      case keymaps.Down:
-        handleKeyDown(videos);
+      case moving.Down:
+        videos.highlightDown();
         break;
-      case keymaps.Up:
-        handlekeyUp(videos);
+      case moving.Up:
+        videos.highlightUp();
         break;
-      case keymaps.Right:
-        handleKeyRight(videos);
+      case moving.Right:
+        videos.highlightNext();
         break;
     }
   });
 };
 
 main();
-
-const handleKeyLeft = (videos: GridVideos) => {
-  if (!videos.highlighted()) {
-    videos.highlightFirst();
-    return;
-  }
-  videos.highlightPrevious();
-};
-
-const handleKeyDown = (videos: GridVideos) => {
-  if (!videos.highlighted()) {
-    videos.highlightFirst();
-    return;
-  }
-
-  videos.highlightDown();
-};
-
-const handlekeyUp = (videos: GridVideos) => {
-  if (!videos.highlighted()) {
-    videos.highlightFirst();
-    return;
-  }
-
-  videos.highlightUp();
-};
-
-const handleKeyRight = (videos: GridVideos) => {
-  if (!videos.highlighted()) {
-    videos.highlightFirst();
-    return;
-  }
-  videos.highlightNext();
-};
