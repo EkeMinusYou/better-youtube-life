@@ -5,6 +5,7 @@ const main = () => {
   const videos = new GridVideos();
 
   document.addEventListener("keydown", function (event) {
+    // なにもハイライトされていないときに移動キーが押されたら最初の要素をハイライトする
     if (movingKeys.includes(event.key) && !videos.highlighted()) {
       videos.highlightFirst();
       return;
