@@ -47,4 +47,39 @@ export class GridVideos {
     this.current--;
     videos[this.current].classList.add(styles.highlight);
   }
+
+  public highlightUp() {
+    if (this.current === undefined) {
+      this.highlightFirst();
+      return;
+    }
+    const videos = this.selectGridVideos();
+    const itemsPerRow = Number(videos[this.current].getAttribute("items-per-row"));
+
+    if (this.current - itemsPerRow < 0) {
+      return;
+    }
+
+    videos[this.current].classList.remove(styles.highlight);
+    this.current -= itemsPerRow;
+    videos[this.current].classList.add(styles.highlight);
+  }
+
+  public highlightDown() {
+    if (this.current === undefined) {
+      this.highlightFirst();
+      return;
+    }
+
+    const videos = this.selectGridVideos();
+    const itemsPerRow = Number(videos[this.current].getAttribute("items-per-row"));
+
+    if (this.current + itemsPerRow >= videos.length) {
+      return;
+    }
+
+    videos[this.current].classList.remove(styles.highlight);
+    this.current += itemsPerRow;
+    videos[this.current].classList.add(styles.highlight);
+  }
 }
