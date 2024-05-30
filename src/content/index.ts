@@ -7,8 +7,8 @@ const main = () => {
   document.addEventListener("keydown", function (event) {
     const path = window.location.pathname;
 
-    if (path === "/") {
-      switch (modifierKeyDown(event) && event.key) {
+    if (path === "/" && modifierKeyDown(event)) {
+      switch (event.key) {
         case moving.Command.Left:
           videos.highlightPrevious();
           break;
