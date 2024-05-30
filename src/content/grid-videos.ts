@@ -7,10 +7,6 @@ export class GridVideos {
     return document.querySelectorAll("ytd-rich-item-renderer");
   }
 
-  public highlighted() {
-    return this.current !== undefined;
-  }
-
   public highlightFirst() {
     const videos = this.selectGridVideos();
 
@@ -22,26 +18,27 @@ export class GridVideos {
   }
 
   public highlightNext() {
-    const videos = this.selectGridVideos();
-
     if (this.current === undefined) {
       this.highlightFirst();
       return;
     }
+
+    const videos = this.selectGridVideos();
+
     videos[this.current].classList.remove(styles.highlight);
     this.current++;
     videos[this.current].classList.add(styles.highlight);
   }
 
   public highlightPrevious() {
-    if (this.current === 0) return;
-
-    const videos = this.selectGridVideos();
-
     if (this.current === undefined) {
       this.highlightFirst();
       return;
     }
+
+    if (this.current === 0) return;
+
+    const videos = this.selectGridVideos();
 
     videos[this.current].classList.remove(styles.highlight);
     this.current--;

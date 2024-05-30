@@ -12,8 +12,7 @@ export const moving = {
     Right: "l",
   },
 } as const;
-export const modifierKeys: string[] = Object.keys(moving.Modifier);
-export const movingKeys: string[] = Object.values(moving.Command);
+
 export const modifierKeyDown = (event: KeyboardEvent): boolean => {
   return (
     event.ctrlKey == moving.Modifier.ctrlKey &&
