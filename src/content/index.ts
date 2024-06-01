@@ -6,8 +6,13 @@ const main = () => {
 
   document.addEventListener("keydown", function (event) {
     const path = window.location.pathname;
+    const target = event.target as HTMLElement;
+    if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
+      return;
+    }
 
     if (path === "/" && modifierKeyDown(event)) {
+      event.preventDefault();
       switch (event.key) {
         case moving.Command.Left:
           videos.highlightPrevious();
