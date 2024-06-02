@@ -1,9 +1,9 @@
 export const HomeCommand = {
   Modifier: {
-    ctrlKey: true,
-    shiftKey: false,
-    altKey: false,
-    metaKey: false,
+    Ctrl: true,
+    Shift: false,
+    Alt: false,
+    Meta: false,
   },
   Command: {
     Left: "h",
@@ -17,19 +17,19 @@ export const HomeCommand = {
 
 export const homeModifier = (event: KeyboardEvent): boolean => {
   return (
-    event.ctrlKey == HomeCommand.Modifier.ctrlKey &&
-    event.shiftKey == HomeCommand.Modifier.shiftKey &&
-    event.altKey == HomeCommand.Modifier.altKey &&
-    event.metaKey == HomeCommand.Modifier.metaKey
+    event.ctrlKey == HomeCommand.Modifier.Ctrl &&
+    event.shiftKey == HomeCommand.Modifier.Shift &&
+    event.altKey == HomeCommand.Modifier.Alt &&
+    event.metaKey == HomeCommand.Modifier.Meta
   );
 };
 
 export const WatchCommand = {
   Modifier: {
-    ctrlKey: true,
-    shiftKey: false,
-    altKey: false,
-    metaKey: false,
+    Ctrl: true,
+    Shift: false,
+    Alt: false,
+    Meta: false,
   },
   Command: {
     Go: "d",
@@ -39,9 +39,9 @@ export const WatchCommand = {
 
 export const watchModifier = (event: KeyboardEvent): boolean => {
   return (
-    event.ctrlKey == WatchCommand.Modifier.ctrlKey &&
-    event.shiftKey == WatchCommand.Modifier.shiftKey &&
-    event.altKey == WatchCommand.Modifier.altKey &&
-    event.metaKey == WatchCommand.Modifier.metaKey
+    event.ctrlKey == WatchCommand.Modifier.Ctrl &&
+    event.shiftKey == WatchCommand.Modifier.Shift &&
+    event.altKey == WatchCommand.Modifier.Alt &&
+    event.metaKey == WatchCommand.Modifier.Meta
   );
 };
