@@ -1,4 +1,16 @@
-export const HomeCommand = {
+type Command = {
+  Modifier: {
+    Ctrl: boolean;
+    Shift: boolean;
+    Alt: boolean;
+    Meta: boolean;
+  };
+  Command: {
+    [key: string]: string[];
+  };
+};
+
+export const HomeCommand: Command = {
   Modifier: {
     Ctrl: true,
     Shift: false,
@@ -6,12 +18,12 @@ export const HomeCommand = {
     Meta: false,
   },
   Command: {
-    Left: "h",
-    Down: "j",
-    Up: "k",
-    Right: "l",
-    Click: "Enter",
-    Exit: "Escape",
+    Left: ["h"],
+    Down: ["j"],
+    Up: ["k"],
+    Right: ["l"],
+    Click: ["Enter"],
+    Exit: ["Escape"],
   },
 } as const;
 
@@ -24,7 +36,7 @@ export const homeModifier = (event: KeyboardEvent): boolean => {
   );
 };
 
-export const WatchCommand = {
+export const WatchCommand: Command = {
   Modifier: {
     Ctrl: true,
     Shift: false,
@@ -32,8 +44,8 @@ export const WatchCommand = {
     Meta: false,
   },
   Command: {
-    Go: "d",
-    Back: "s",
+    Go: ["d"],
+    Back: ["s"],
   },
 } as const;
 
