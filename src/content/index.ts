@@ -1,5 +1,5 @@
 import { GridVideos } from "./grid-videos";
-import { modifierKeyDown, HomeCommand } from "./keymaps";
+import { homeModifier, HomeCommand, watchModifier, WatchCommand } from "./keymaps";
 
 const main = () => {
   const videos = new GridVideos();
@@ -11,7 +11,7 @@ const main = () => {
       return;
     }
 
-    if (path === "/" && modifierKeyDown(event)) {
+    if (path === "/" && homeModifier(event)) {
       event.preventDefault();
       switch (event.key) {
         case HomeCommand.Command.Left:
@@ -31,6 +31,18 @@ const main = () => {
           break;
         case HomeCommand.Command.Exit:
           videos.unhighlight();
+          break;
+      }
+    }
+
+    if (path === "/watch" && watchModifier(event)) {
+      event.preventDefault();
+      switch (event.key) {
+        case WatchCommand.Command.Go:
+          window.history.go();
+          break;
+        case WatchCommand.Command.Back:
+          window.history.back();
           break;
       }
     }
