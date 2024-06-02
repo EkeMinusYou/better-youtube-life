@@ -12,36 +12,44 @@ const main = () => {
     }
 
     if (path === "/" && homeModifier(event)) {
+      if (!(event.key in HomeCommand.Command)) {
+        return;
+      }
       event.preventDefault();
-      switch (event.key) {
-        case HomeCommand.Command.Left:
+      const action = HomeCommand.Command[event.key as keyof typeof HomeCommand.Command];
+      switch (action) {
+        case "Left":
           videos.highlightPrevious();
           break;
-        case HomeCommand.Command.Down:
+        case "Down":
           videos.highlightDown();
           break;
-        case HomeCommand.Command.Up:
+        case "Up":
           videos.highlightUp();
           break;
-        case HomeCommand.Command.Right:
+        case "Right":
           videos.highlightNext();
           break;
-        case HomeCommand.Command.Click:
+        case "Click":
           videos.clickHighlighted();
           break;
-        case HomeCommand.Command.Exit:
+        case "Exit":
           videos.unhighlight();
           break;
       }
     }
 
     if (path === "/watch" && watchModifier(event)) {
+      if (!(event.key in WatchCommand.Command)) {
+        return;
+      }
       event.preventDefault();
-      switch (event.key) {
-        case WatchCommand.Command.Go:
+      const action = WatchCommand.Command[event.key as keyof typeof WatchCommand.Command];
+      switch (action) {
+        case "Go":
           window.history.go();
           break;
-        case WatchCommand.Command.Back:
+        case "Back":
           window.history.back();
           break;
       }
