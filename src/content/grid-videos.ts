@@ -7,6 +7,15 @@ export class GridVideos {
     return document.querySelectorAll("ytd-rich-item-renderer");
   }
 
+  public clickHighlighted() {
+    if (this.current === undefined) {
+      return;
+    }
+
+    const videos = this.selectGridVideos();
+    videos[this.current].querySelector("a")?.click();
+  }
+
   public highlightFirst() {
     const videos = this.selectGridVideos();
 
