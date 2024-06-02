@@ -1,4 +1,4 @@
-export const GridCommand = {
+export const HomeCommand = {
   Modifier: {
     ctrlKey: true,
     shiftKey: false,
@@ -11,14 +11,15 @@ export const GridCommand = {
     Up: "k",
     Right: "l",
     Click: "Enter",
+    Exit: "Escape",
   },
 } as const;
 
 export const modifierKeyDown = (event: KeyboardEvent): boolean => {
   return (
-    event.ctrlKey == GridCommand.Modifier.ctrlKey &&
-    event.shiftKey == GridCommand.Modifier.shiftKey &&
-    event.altKey == GridCommand.Modifier.altKey &&
-    event.metaKey == GridCommand.Modifier.metaKey
+    event.ctrlKey == HomeCommand.Modifier.ctrlKey &&
+    event.shiftKey == HomeCommand.Modifier.shiftKey &&
+    event.altKey == HomeCommand.Modifier.altKey &&
+    event.metaKey == HomeCommand.Modifier.metaKey
   );
 };

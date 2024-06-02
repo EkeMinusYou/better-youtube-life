@@ -16,6 +16,16 @@ export class GridVideos {
     videos[this.current].querySelector("a")?.click();
   }
 
+  public unhighlight() {
+    if (this.current === undefined) {
+      return;
+    }
+
+    const videos = this.selectGridVideos();
+    videos[this.current].classList.remove(styles.highlight);
+    this.current = undefined;
+  }
+
   public highlightFirst() {
     const videos = this.selectGridVideos();
 
