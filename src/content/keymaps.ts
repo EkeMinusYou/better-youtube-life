@@ -7,10 +7,10 @@ type Modifier = {
 
 export const buildModifer = (event: KeyboardEvent, modifier: Modifier) => {
   return (
-    event.ctrlKey == modifier.Ctrl &&
-    event.shiftKey == modifier.Shift &&
-    event.altKey == modifier.Alt &&
-    event.metaKey == modifier.Meta
+    event.ctrlKey === modifier.Ctrl &&
+    event.shiftKey === modifier.Shift &&
+    event.altKey === modifier.Alt &&
+    event.metaKey === modifier.Meta
   );
 };
 

@@ -4,7 +4,7 @@ import { GlobalCommand, HomeCommand, WatchCommand, buildModifer } from "./keymap
 const main = () => {
   const videos = new GridVideos();
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", (event) => {
     const path = window.location.pathname;
     const target = event.target as HTMLElement;
     if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
