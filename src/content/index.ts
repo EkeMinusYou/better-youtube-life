@@ -1,5 +1,5 @@
 import { GridVideos } from "./grid-videos";
-import { HomeCommand, WatchCommand, buildModifer } from "./keymaps";
+import { GlobalCommand, HomeCommand, WatchCommand, buildModifer } from "./keymaps";
 
 const main = () => {
   const videos = new GridVideos();
@@ -9,6 +9,16 @@ const main = () => {
     const target = event.target as HTMLElement;
     if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
       return;
+    }
+
+    if (event.key in GlobalCommand.Command && buildModifer(event, GlobalCommand.Modifier)) {
+      event.preventDefault();
+      const action = GlobalCommand.Command[event.key as keyof typeof GlobalCommand.Command];
+      switch (action) {
+        case "GoToHome":
+          window.location.href = "/";
+          break;
+      }
     }
 
     if (path === "/" && buildModifer(event, HomeCommand.Modifier)) {

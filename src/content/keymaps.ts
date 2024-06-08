@@ -43,3 +43,15 @@ export const WatchCommand = {
     s: "Back",
   },
 } as const;
+
+export const GlobalCommand = {
+  Modifier: {
+    Ctrl: true,
+    Shift: false,
+    Alt: false,
+    Meta: false,
+  },
+  Command: {
+    y: "GoToHome",
+  },
+} as const;
