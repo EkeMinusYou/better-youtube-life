@@ -1,3 +1,19 @@
+type Modifier = {
+  Ctrl: boolean;
+  Shift: boolean;
+  Alt: boolean;
+  Meta: boolean;
+};
+
+export const buildModifer = (event: KeyboardEvent, modifier: Modifier) => {
+  return (
+    event.ctrlKey == modifier.Ctrl &&
+    event.shiftKey == modifier.Shift &&
+    event.altKey == modifier.Alt &&
+    event.metaKey == modifier.Meta
+  );
+};
+
 export const HomeCommand = {
   Modifier: {
     Ctrl: true,
@@ -15,15 +31,6 @@ export const HomeCommand = {
   },
 } as const;
 
-export const homeModifier = (event: KeyboardEvent): boolean => {
-  return (
-    event.ctrlKey == HomeCommand.Modifier.Ctrl &&
-    event.shiftKey == HomeCommand.Modifier.Shift &&
-    event.altKey == HomeCommand.Modifier.Alt &&
-    event.metaKey == HomeCommand.Modifier.Meta
-  );
-};
-
 export const WatchCommand = {
   Modifier: {
     Ctrl: true,
@@ -36,12 +43,3 @@ export const WatchCommand = {
     s: "Back",
   },
 } as const;
-
-export const watchModifier = (event: KeyboardEvent): boolean => {
-  return (
-    event.ctrlKey == WatchCommand.Modifier.Ctrl &&
-    event.shiftKey == WatchCommand.Modifier.Shift &&
-    event.altKey == WatchCommand.Modifier.Alt &&
-    event.metaKey == WatchCommand.Modifier.Meta
-  );
-};

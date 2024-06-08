@@ -1,5 +1,5 @@
 import { GridVideos } from "./grid-videos";
-import { homeModifier, HomeCommand, watchModifier, WatchCommand } from "./keymaps";
+import { HomeCommand, WatchCommand, buildModifer } from "./keymaps";
 
 const main = () => {
   const videos = new GridVideos();
@@ -11,7 +11,7 @@ const main = () => {
       return;
     }
 
-    if (path === "/" && homeModifier(event)) {
+    if (path === "/" && buildModifer(event, HomeCommand.Modifier)) {
       if (!(event.key in HomeCommand.Command)) {
         return;
       }
@@ -39,7 +39,7 @@ const main = () => {
       }
     }
 
-    if (path === "/watch" && watchModifier(event)) {
+    if (path === "/watch" && buildModifer(event, WatchCommand.Modifier)) {
       if (!(event.key in WatchCommand.Command)) {
         return;
       }
