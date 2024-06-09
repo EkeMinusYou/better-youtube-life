@@ -57,7 +57,7 @@ const main = () => {
       const action = WatchCommand.Command[event.key as keyof typeof WatchCommand.Command];
       switch (action) {
         case "Go":
-          window.history.go();
+          window.history.go(1);
           break;
         case "Back":
           window.history.back();
