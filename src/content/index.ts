@@ -1,5 +1,5 @@
 import { GridVideos } from "./grid-videos";
-import { GlobalCommand, HomeCommand, WatchCommand, buildModifer } from "./keymaps";
+import { GlobalCommand, GridCommand, WatchCommand, buildModifer } from "./keymaps";
 
 const main = () => {
   const videos = new GridVideos();
@@ -21,12 +21,12 @@ const main = () => {
       }
     }
 
-    if (path === "/" && buildModifer(event, HomeCommand.Modifier)) {
-      if (!(event.key in HomeCommand.Command)) {
+    if (path === "/" && buildModifer(event, GridCommand.Modifier)) {
+      if (!(event.key in GridCommand.Command)) {
         return;
       }
       event.preventDefault();
-      const action = HomeCommand.Command[event.key as keyof typeof HomeCommand.Command];
+      const action = GridCommand.Command[event.key as keyof typeof GridCommand.Command];
       switch (action) {
         case "Left":
           videos.highlightPrevious();

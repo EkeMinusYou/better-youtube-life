@@ -14,7 +14,7 @@ export const buildModifer = (event: KeyboardEvent, modifier: Modifier) => {
   );
 };
 
-export const HomeCommand = {
+export const GridCommand = {
   Modifier: {
     Ctrl: true,
     Shift: false,
