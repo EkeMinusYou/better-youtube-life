@@ -2,7 +2,7 @@ import { GridVideos } from "./grid-videos";
 import { GlobalCommand, GridCommand, WatchCommand, buildModifer } from "./keymaps";
 
 const main = () => {
-  const videos = new GridVideos();
+  const homeVideos = new GridVideos();
 
   document.addEventListener("keydown", (event) => {
     const path = window.location.pathname;
@@ -29,22 +29,22 @@ const main = () => {
       const action = GridCommand.Command[event.key as keyof typeof GridCommand.Command];
       switch (action) {
         case "Left":
-          videos.highlightPrevious();
+          homeVideos.highlightPrevious();
           break;
         case "Down":
-          videos.highlightDown();
+          homeVideos.highlightDown();
           break;
         case "Up":
-          videos.highlightUp();
+          homeVideos.highlightUp();
           break;
         case "Right":
-          videos.highlightNext();
+          homeVideos.highlightNext();
           break;
         case "Click":
-          videos.clickHighlighted();
+          homeVideos.clickHighlighted();
           break;
         case "Exit":
-          videos.unhighlight();
+          homeVideos.unhighlight();
           break;
       }
     }

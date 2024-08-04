@@ -3,8 +3,10 @@ import { styles } from "./styles";
 export class GridVideos {
   private current: number | undefined = undefined;
 
+  constructor(private queryId = "ytd-rich-item-renderer") {}
+
   private selectGridVideos() {
-    return document.querySelectorAll("ytd-rich-item-renderer");
+    return document.querySelectorAll(this.queryId);
   }
 
   public clickHighlighted() {
